@@ -1,0 +1,8 @@
+.kaders{
+    float: left;
+    margin-right: 15px;
+}
+
+.clearfix {
+    clear-side: both;
+}
