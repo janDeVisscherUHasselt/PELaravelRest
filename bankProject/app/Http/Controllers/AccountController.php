@@ -13,6 +13,6 @@ class AccountController extends Controller
     }
 
     function getAccount($id){
-        return Account::all()->find($id);
+        return Account::find($id);
     }
 }
