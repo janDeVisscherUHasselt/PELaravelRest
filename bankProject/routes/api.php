@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 use App\Http\Controllers\AccountController;
 Route::get('/accounts', [AccountController::class, "allAccounts"]);
 Route::get('/account/{id}', [AccountController::class, "getAccount"]);
+Route::post('/topupaccount', 'App\Http\Controllers\AccountController@topUpAccount');

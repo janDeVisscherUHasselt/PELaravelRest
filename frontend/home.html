@@ -16,17 +16,23 @@
     <div>
         <div class="kaders">
             <h3>Saldo bekijken</h3>
-
             id: <input type="text" id="inputShowSaldo">
             <br>
-            <button type="submit" onclick="showSaldo()" value="button">Button</button>
+            <button type="submit" onclick="showSaldo()" value="button">Verzenden</button>
             <br>
             <label id="showSaldo"></label>
-
-
         </div>
 
-        <div class="kaders"><h3>Saldo afhalen</h3></div>
+        <div class="kaders"><h3>Saldo afhalen</h3>
+            <h3>Saldo opladen</h3>
+            id: <input type="text" id="inputAddSaldo">
+            <br>
+            amount: <input type="text" id="amountAddSaldo">
+            <br>
+            <button type="submit" onclick="addSaldo()" value="button">Verzenden</button>
+            <br>
+            <label id="addSaldo"></label>
+        </div>
 
         <div class="kaders"><h3>Saldo opladen</h3></div>
         <div class="clearfix"/>

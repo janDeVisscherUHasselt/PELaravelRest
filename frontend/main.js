@@ -1,9 +1,7 @@
 
-function showSaldo(){
+async function showSaldo(){
     let input = document.getElementById("inputShowSaldo")
-    console.log(input.value)
     let output = document.getElementById("showSaldo")
-    let saldo = null
 
     let url = 'http://127.0.0.1:8000/api/account/' + input.value
     fetch(url)
@@ -11,14 +9,33 @@ function showSaldo(){
             return response.json();
         })
         .then(accounts => {
-            saldo = accounts.saldo
-            output.innerHTML = 'Saldo: ' + saldo
-        })
+            this.saldo = accounts.saldo
+            output.innerHTML = 'Saldo: ' + this.saldo
+        }).then(response => {
+            console.log(this.saldo)
+    })
         .catch((error) => {
             console.log(error)
         });
 
 
+}
 
+function addSaldo(){
+    let inputId = document.getElementById("inputAddSaldo")
+    let inputAmount = document.getElementById("amountAddSaldo")
+    let output = document.getElementById("addSaldo")
 
+    let url = 'http://127.0.0.1:8000/api/account/' + inputId.value
+    fetch(url)
+        .then(response => {
+            return response.json();
+        })
+        .then(accounts => {
+            this.saldo = accounts.saldo
+            output.innerHTML = 'Saldo: ' + saldo
+        })
+        .catch((error) => {
+            console.log(error)
+        });
 }
