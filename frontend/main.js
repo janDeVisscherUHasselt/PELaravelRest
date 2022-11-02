@@ -22,9 +22,11 @@ async function showSaldo(){
 }
 
 function addSaldo(){
-    let inputId = document.getElementById("inputAddSaldo")
-    let inputAmount = document.getElementById("amountAddSaldo")
+    let inputId = document.getElementById("inputAddSaldo").value
+    let inputAmount = document.getElementById("amountAddSaldo").value
     let output = document.getElementById("addSaldo")
+
+    console.log(inputAmount)
 
 
     let url = 'http://127.0.0.1:8000/api/topupaccount'

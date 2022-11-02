@@ -13,16 +13,17 @@ class AccountController extends Controller
     }
 
     function getAccount($id){
+        error_log('GET');
         return Account::find($id);
     }
 
     function topUpAccount(Request $request) {
+        error_log('POST');
         $amount = $request->amount;
         $id = $request->id;
         $account = Account::find($id);
         $account->saldo = $account->saldo + $amount;
         $account->save();
-      
         return $account;
     }
 }
