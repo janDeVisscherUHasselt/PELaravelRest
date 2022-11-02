@@ -26,16 +26,20 @@ function addSaldo(){
     let inputAmount = document.getElementById("amountAddSaldo")
     let output = document.getElementById("addSaldo")
 
-    let url = 'http://127.0.0.1:8000/api/account/' + inputId.value
-    fetch(url)
-        .then(response => {
-            return response.json();
+
+    let url = 'http://127.0.0.1:8000/api/topupaccount'
+    fetch(url,
+        {
+
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': "*",
+            },
+
+            method: "POST",
+            body: JSON.stringify({amount: inputAmount, id: inputId})
         })
-        .then(accounts => {
-            this.saldo = accounts.saldo
-            output.innerHTML = 'Saldo: ' + saldo
-        })
-        .catch((error) => {
-            console.log(error)
-        });
+        .then(function(res){ console.log(res) })
+        .catch(function(res){ console.log(res) })
 }
