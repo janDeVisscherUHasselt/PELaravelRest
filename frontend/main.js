@@ -41,7 +41,11 @@ function addSaldo(){
 
             method: "POST",
             body: JSON.stringify({amount: inputAmount, id: inputId})
+        }).then(response => {
+            return response.json();
+    })
+        .then(accounts => {
+            output.innerHTML = 'Saldo: ' + accounts.saldo
         })
-        .then(function(res){ console.log(res) })
         .catch(function(res){ console.log(res) })
 }
